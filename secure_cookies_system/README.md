@@ -756,11 +756,6 @@ You are free to:
 With the condition that:
 -  Include the original license and copyright notice
 
-## 👨‍💻 Author
-
-**Secure Cookies System Contributors**
-
-This is an educational project demonstrating cryptographic concepts. It was created to help developers understand how modern web applications protect data integrity and authenticity.
 
 ## FAQ
 
