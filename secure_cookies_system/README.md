@@ -12,7 +12,7 @@ Learn how servers protect cookies from tampering using **Message Authentication 
 ### Part B: RSA Digital Signatures
 Explore asymmetric cryptography through **RSA key pairs** and **digital signatures**. Sign files with a private key and verify them with a public key, proving both authenticity and integrity.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Technology Stack](#technology-stack)
@@ -275,7 +275,7 @@ pnpm check
 pnpm format
 ```
 
-## 📖 Usage Guide
+##  Usage Guide
 
 ### Part A: HMAC-Protected Cookies
 
