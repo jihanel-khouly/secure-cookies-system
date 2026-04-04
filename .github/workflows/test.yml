@@ -8,15 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: secure_cookies_system
-
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Show directory structure
+      - name: Show full structure
         run: ls -R
 
       - name: Setup Node.js
@@ -27,11 +23,22 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: Find package.json and install
+        run: |
+          echo "Searching for package.json..."
+          find . -name package.json
+          cd $(dirname $(find . -name package.json | head -n 1))
+          echo "Entering project directory..."
+          pwd
+          ls
+          pnpm install
 
-      - name: Run build (if exists)
-        run: pnpm run build || echo "No build script found"
+      - name: Build (if exists)
+        run: |
+          cd $(dirname $(find . -name package.json | head -n 1))
+          pnpm run build || echo "No build script"
 
-      - name: Run tests (if exists)
-        run: pnpm test || echo "No test script found"
+      - name: Test (if exists)
+        run: |
+          cd $(dirname $(find . -name package.json | head -n 1))
+          pnpm test || echo "No test script"
